@@ -1,9 +1,10 @@
 # ALB for HTTPS-only service
 resource "aws_lb" "app_alb" {
-  name               = "cis-demo-alb"
-  internal           = false
-  load_balancer_type = "application"
-  subnets            = module.vpc.public_subnets
+  name                       = "cis-demo-alb"
+  internal                   = false
+  load_balancer_type         = "application"
+  subnets                    = module.vpc.public_subnets
+  enable_deletion_protection = true
 }
 
 resource "aws_lb_target_group" "app_tg" {

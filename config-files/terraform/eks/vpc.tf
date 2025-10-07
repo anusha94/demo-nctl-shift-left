@@ -16,4 +16,8 @@ module "vpc" {
   tags = {
     Name = "cis-demo"
   }
+  create_igw                             = false
+  enable_flow_log                        = true
+  create_database_internet_gateway_route = false
+  enable_network_address_usage_metrics   = true
 } 

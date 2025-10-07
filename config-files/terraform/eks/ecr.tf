@@ -10,4 +10,5 @@ resource "aws_ecr_repository" "app_repo" {
     encryption_type = "KMS"
     kms_key         = aws_kms_key.eks.arn
   }
+  image_tag_mutability = "IMMUTABLE"
 } 

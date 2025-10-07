@@ -7,7 +7,7 @@ module "eks" {
   cluster_version = var.cluster_version
 
   cluster_endpoint_private_access = false
-  cluster_endpoint_public_access  = true
+cluster_endpoint_public_access = false
 
   cluster_encryption_config = {
     resources = ["secrets"]
@@ -32,4 +32,5 @@ module "eks" {
 
   create_iam_role = false
   iam_role_arn    = aws_iam_role.eks_cluster_role.arn
+enable_kms_key_rotation = true
 } 
